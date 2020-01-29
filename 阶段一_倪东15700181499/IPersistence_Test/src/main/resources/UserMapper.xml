@@ -1,0 +1,23 @@
+<mapper namespace="com.zzk.learning.dao.UserDao">
+
+    <!--sql的唯一标识：namespace.id来组成 ： statementId-->
+    <select id="findAll" resultType="com.zzk.learning.entity.User" >
+        select * from user
+    </select>
+
+    <select id="findByCondition" resultType="com.zzk.learning.entity.User" paramterType="com.zzk.learning.entity.User">
+        select * from user where id = #{id} and username = #{username}
+    </select>
+
+    <update id="update">
+        update user
+        <set>
+            username = #{username}
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+</mapper>
