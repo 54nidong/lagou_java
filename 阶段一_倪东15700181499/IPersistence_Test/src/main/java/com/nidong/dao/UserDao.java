@@ -12,7 +12,7 @@ public interface UserDao {
 
     User findByCondition(User user);
 
-    void update(User user);
+    Integer update(User user);
 
-    void delete(Integer id);
+    Integer delete(Integer id);
 }
