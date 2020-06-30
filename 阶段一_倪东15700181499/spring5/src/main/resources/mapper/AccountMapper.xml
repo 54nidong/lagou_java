@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nidong.test.dao.AccountDAO">
+
+    <resultMap id="BaseResultMap" type="com.nidong.test.entity.Account">
+        <result property="aname" column="aname"/>
+        <result property="num" column="num"/>
+        <result property="money" column="money"/>
+    </resultMap>
+
+    <insert id="insert" keyProperty="id" keyColumn="id" useGeneratedKeys="true" parameterType="com.nidong.test.entity.Account">
+        insert into account(aname,num,money) values (#{aname},#{num},#{version},#{money})
+    </insert>
+
+    <update id="update">
+        update account
+        <set>
+            num = #{num},
+            money = #{money}
+        </set>
+        where aname = #{aname}
+    </update>
+
+    <select id="getAccount" resultType="com.nidong.test.entity.Account">
+        select *  from account where aname = #{aname}
+    </select>
+
+</mapper>
