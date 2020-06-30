@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
-@Repository
+@Repository//用于标注数据访问组件，即DAO组件
 public interface AccountDAO {
 
 //    Account getAccount(String name);
